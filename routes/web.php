@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Models\Company;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('table');
+Route::get('/', function(){
+  return View('home');
 });
+
+Route::get('/company-table', [IndexController::class, 'companyIndex']);
+
+Route::get('/employee-table', [IndexController::class, 'employeeIndex']);

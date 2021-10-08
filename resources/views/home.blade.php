@@ -1,7 +1,5 @@
 <x-layout>
   <x-slot name="content">
-    <table>
-
-    </table>
+    <h1> Welcome to the company manager</h1>
   </x-slot>
 </x-layout>

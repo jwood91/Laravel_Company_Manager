@@ -9,10 +9,14 @@ use Illuminate\Support\Facades\str;
 
 class Company extends Model
 {
+
+  protected $table = "companies";
+
     use HasFactory;
 
     public function employee()
     {
         return $this->hasMany(Employee::class);
+        
     }
 }

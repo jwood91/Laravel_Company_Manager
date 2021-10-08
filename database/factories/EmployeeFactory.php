@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+
 use App\Models\Company;
 use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -27,7 +28,6 @@ class EmployeeFactory extends Factory
 
         return [
 
-            'id' => $this->faker->unique()->randomNumber(7),
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),

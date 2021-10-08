@@ -26,11 +26,10 @@ class CompanyFactory extends Factory
         $name = $this->faker->company();
 
         return [
-            'id' => $this->faker->unique()->randomNumber(3),
             'company_name' => $name,
             'email' => $this->faker->unique()->safeEmail(),
             'website' => $this->faker->url(),
-            'logo' => $this->faker->image(),
+            'logo' => $this->faker->image('public/storage/images',100,100, null, false),
             'created_at' => now(),
             'updated_at' => now(),
 
