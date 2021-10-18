@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\TableController;
+use App\Http\Controllers\SortController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EmployeeController;
 use App\Models\Company;
 
 
@@ -20,6 +23,9 @@ Route::get('/', function(){
   return View('home');
 });
 
-Route::get('/company-table', [IndexController::class, 'companyIndex']);
+Route::resource('companies', CompanyController::class)
+      ->missing(function(Request $request){
+        return Redirect::route('companies.index');
+      });
 
-Route::get('/employee-table', [IndexController::class, 'employeeIndex']);
+Route::resource('employees', EmployeeController::class);

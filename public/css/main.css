@@ -1,10 +1,9 @@
-#table-outer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.table {
   width: 100%;
+  min-width: 100%;
   max-width: 100%;
   height: 100%;
+  overflow-x: scroll;
 }
 
 .table-pages {
@@ -12,10 +11,107 @@
   height: 10%;
 }
 
+.main-column {
+  width: auto;
+  height: 50px;
+  min-width: 50px;
+}
+
+.links-header {
+  min-width: 103px;
+  width: 103px;
+  height: 49px;
+  right: 0;
+}
+
+#links-header {
+  border: none;
+  border-left: 0.5px solid #dee2e6;
+}
+
+#logo {
+  border-right-style: none;
+}
+
+.links-data {
+  position: relative;
+  width: 100%;
+  right: 0;
+}
+
+.links-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 103px;
+  right: 0;
+  min-width: 100px;
+  background-color: lightgrey;
+  border: 0.5px solid black;
+}
+
+.employee-links {
+  height: 50.5px;
+}
+
+.company-links {
+  height: 90px;
+}
+
+.links-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80px;
+}
+
+.table-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.add-button-container {
+  width: 95%;
+}
+
+#outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 95%;
+  min-width: 95%;
+}
+
+#inner {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.company-tr {
+  height: 90px;
+}
+
+.empty {
+  visibility: hidden;
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  border: none;
+}
+
 html, body {
   max-width: 100%;
-  height: auto;
-  min-height: 100vh;
 }
 
 body {
@@ -80,18 +176,66 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 100%;
   height: 100%;
   min-height: 85vh;
+  padding: 0;
+}
+
+.text-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 25em;
+  height: 3em;
+  border: 1px solid lightgrey;
+  margin: 0;
+  padding: 0 15px 0 15px;
+}
+
+#access-site {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 35rem;
+  height: 5rem;
+}
+#access-site a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#home-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#home-container h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.home-button {
+  display: flex;
+  width: 40%;
+  height: 4rem;
 }
 
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 15vh;
+  height: 10rem;
   width: 100%;
   border-bottom: 2px solid lightgrey;
+  margin-bottom: 8px;
 }
 
 #header-container {
@@ -104,6 +248,7 @@ header {
 
 #header-content {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -114,16 +259,19 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 10%;
+  width: 20em;
 }
 
-#sidenav-container {
+#title-menu {
   display: flex;
-  width: 100%;
-  height: 100%;
-  border-width: 0 2px 2px 0;
-  border-style: solid;
-  border-color: lightgrey;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30rem;
+}
+
+#my-menu {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 #sidenav-main {
@@ -136,23 +284,160 @@ header {
 
 #sidenav-content {
   display: flex;
-  position: fixed;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  width: 20%;
-  height: 100vh;
-  padding: 0 15px 0 15px;
+  width: 100%;
+  border-right: 2px solid lightgrey;
+  height: 100%;
+  padding-top: 8px;
+}
+#sidenav-content h1 {
+  font-size: 25px;
+  text-align: left;
+  text-decoration: underline;
 }
 
 #sidenav-links {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: space-between;
-  width: 20%;
-  height: 100%;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  padding: 0;
+}
+#sidenav-links li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-left: 15px;
+  height: 2em;
 }
 #sidenav-links a {
-  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+}
+
+#menu-top {
+  height: 10rem;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  border-color: lightgrey;
+}
+
+#company-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#company-inner {
+  display: flex;
+  width: 95%;
+  height: auto;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px;
+  border: 1px solid lightgrey;
+}
+#company-inner a {
+  cursor: pointer;
+}
+
+.company-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+.logo-input {
+  height: 8em;
+}
+
+.information-input {
+  height: 3em;
+  margin-bottom: 15px;
+}
+
+.company-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 25%;
+  height: 3em;
+  margin: 0;
+  margin-right: 20px;
+}
+
+#show-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+.show-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form-group img {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.form-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: auto;
+}
+
+.form-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: auto;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.form-button a {
+  margin-right: 20px;
 }

@@ -1,14 +1,114 @@
-#table-outer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.table {
   width: 100%;
+  min-width: 100%;
   max-width: 100%;
   height: 100%;
+  overflow-x: scroll;
 }
 
 
 .table-pages {
   width: 100%;
   height: 10%;
+}
+
+.main-column {
+  width: auto;
+  height: 50px;
+  min-width: 50px;
+}
+
+.links-header {
+  min-width: 103px;
+   width: 103px;
+   height: 49px;
+   right:0;
+
+}
+
+#links-header {
+  border: none;
+  border-left: 0.5px solid #dee2e6;
+}
+#logo {
+  border-right-style: none;
+}
+
+.links-data{
+  position: relative;
+  width: 100%;
+  right:0;
+
+}
+
+.links-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 103px;
+  right: 0;
+  min-width: 100px;
+  background-color: lightgrey;
+  border: 0.5px solid black;
+
+}
+
+.employee-links {
+  height: 50.5px;
+}
+
+.company-links {
+  height: 90px;
+}
+.links-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80px;
+}
+
+.table-link {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.add-button-container {
+  width: 95%;
+}
+
+#outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 95%;
+  min-width: 95%;
+}
+
+#inner {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.company-tr {
+
+  height: 90px;
+}
+
+.empty {
+  visibility: hidden;
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  border: none;
 }
