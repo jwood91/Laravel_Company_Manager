@@ -138,7 +138,14 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $company = Company::find($id);
+      $company->employee()->delete();
+      $company->delete();
+
+      // redirect
+      session()->flash('message', 'Successfully deleted the company and its employees!');
+      return redirect(route('companies.index'));
+
     }
 
 

@@ -13,15 +13,16 @@
         "axios": "^0.21",
         "bootstrap": "^4.6.0",
         "jquery": "^3.6",
-        "laravel-mix": "^6.0.6",
+        "laravel-mix": "^6.0.34",
         "lodash": "^4.17.19",
         "popper.js": "^1.16.1",
         "postcss": "^8.1.14",
         "resolve-url-loader": "^4.0.0",
-        "sass": "^1.32.11",
+        "sass": "^1.43.2",
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
+        "@cmyee/pushy": "^1.4.0",
         "babel-preset-env": "^1.7.0",
         "babel-register": "^6.26.0",
         "offside-js": "^1.4.0"

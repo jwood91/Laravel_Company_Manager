@@ -28,7 +28,10 @@
 @endif
 </div>
     <div id="form-container-outer" class="form-outer">
-      <div id="form-container-outer" class="form-inner">
+      <div id="edit-nav-link" class="edit-nav-link">
+        <a class="btn btn-success btn-md" href="{{ route('employees.index') }}">Back</a>
+      </div>
+      <div id="form-container-inner" class="row justify-content-center card p-4">
         <form id="employee-form" action="{{ route('employees.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
@@ -68,11 +71,12 @@
                               @endforeach
                           </select>
                       </div>
+                    </div>
 
-                      <div class="form-button">
-                          <a class="btn btn-primary btn-lg w-25" href="{{ route('employees.index') }}"> Back</a>
-                          <button type="submit" class="btn btn-primary btn-lg w-25">Submit</button>
-                      </div>
+                        <div class="form-button">
+                            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                        </div>
+
             </div>
         </form>
       </div>

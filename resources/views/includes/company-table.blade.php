@@ -1,7 +1,7 @@
 <div id="outer" class="">
   <div id="inner" class= "card">
 
-      <table class="card-body p-0 m-0 table table-sm w-100 table-responsive-lg table-bordered table-hover">
+      <table class="card-body p-0 m-0 table table-sm w-100 table-responsive-md table-bordered table-hover">
                               <thead class="text-center thead-dark">
                                   <tr>
                                       <th class="align-middle main-column">Company ID</th>
@@ -9,7 +9,7 @@
                                       <th class="align-middle main-column">Email</th>
                                       <th class="align-middle main-column">Website</th>
                                       <th id="logo" class="align-middle main-column">Logo</th>
-                                      <th class="align-middle empty" style="width:100px;visibility: hidden;">Empty</th>
+                                      <th class="align-middle empty" style="width:100px; visibility: hidden;">Empty</th>
                                       <th id="links-header" class="align-middle links-header links-column">Links</th>
 
                                   </tr>
@@ -26,8 +26,8 @@
                                       <td id="empty" class="align-middle empty" style="visibility: hidden;">Empty</td>
                                        <td id="table-links" class="align-middle company-links  links-data links-column p-0 m-0">
                                          <div class="links-div">
-                                              <a class="btn btn-success table-link" title="View" href="{{ route('companies.show', $company->id) }}"><i class="far fa-eye tooltiptext"></i></a>
-                                              <a class="btn btn-success table-link"  title="Edit" href="{{ route('companies.edit', $company->id) }}"><i class="far fa-edit tooltiptext"></i></a>
+                                              <a class="btn btn-success table-link" {{Popper::arrow()->pop('View')}} href="{{ route('companies.show', $company->id) }}"><i class="far fa-eye tooltiptext"></i></a>
+                                              <a class="btn btn-success table-link"  {{ Popper::arrow()->pop('Edit') }} href="{{ route('companies.edit', $company->id) }}"><i class="far fa-edit tooltiptext"></i></a>
                                           </div>
                                        </td>
 

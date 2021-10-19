@@ -6,8 +6,10 @@
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/pushy.css">
   <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/pushy.min.js" defer></script>
   <script src="/js/app.js"></script>
   <script src="https://kit.fontawesome.com/cd35332ff4.js"
     crossorigin="anonymous"></script>
@@ -24,7 +26,7 @@
     <main>
         <div id="content-container">
               @include('includes.sidenav')
-              <div id="site-overlay"></div>
+              <div class="site-overlay"></div>
               <div id="container">
                   <header>
 
@@ -39,9 +41,9 @@
     <script>
           $(document).ready(function(){
               $('.alert-success').fadeIn().delay(5000).fadeOut();
-               $('.btn-primary').tooltip({show: {effect:"none", delay:0}});
+               $('.btn-success').tooltip({show: {effect:"none", delay:0}});
           });
     </script>
 
-
+    @include('popper::assets');
 </body>

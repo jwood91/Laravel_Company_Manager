@@ -11,7 +11,6 @@
 
 
 
-
 @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -29,12 +28,23 @@
     </div>
 @endif
 </div>
-    <div id="form-container-outer" class="form-outer">
-      <div id="form-container-inner" class="form-inner">
 
-        <form id="employee-form" action="{{ route('employees.store') }}" method="POST" enctype="multipart/form-data">
+      <div id="form-container-outer" class="col">
+          <div id="edit-nav-link" class="edit-nav-link">
+            <a class="btn btn-success btn-md" href="{{route('employees.show', $employee->id)}}">Back</a>
+            <form action="{{ route('employees.destroy', $employee->id) }}" method="POST">
+                   @csrf
+                   @method('DELETE')
+
+                    <button type="submit" class="btn btn-danger btn-md" onclick="return confirm('Are you sure?')" href="{{route('employees.index')}}">Delete</button>
+
+              </form>
+          </div>
+        <div id="form-container-inner" class="row justify-content-center card p-4">
+
+        <form id="employee-form" action="{{ route('employees.store') }}" method="POST" enctype="multipart/form-data" class="">
             @csrf
-
+            @method('PATCH')
              <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
@@ -72,15 +82,15 @@
                               @endforeach
                           </select>
                       </div>
+                    </div>
                 <div class="form-button">
-                    <a class="btn btn-success btn-lg w-25" href="{{ route('employees.index') }}"> Back</a>
-                    <button type="submit" class="btn btn-success btn-lg w-25">Submit</button>
+                    <button type="submit" class="btn btn-success btn-lg">Submit</button>
                 </div>
             </div>
         </form>
       </div>
+      </div>
     </div>
-  </div>
 
   </x-slot>
 </x-layout>

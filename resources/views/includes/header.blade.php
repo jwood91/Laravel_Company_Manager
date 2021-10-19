@@ -1,7 +1,8 @@
 <div id="header-container">
-    <div id="side-menu-button" class="side-menu-button">
-      <button type="button" id="menu-button">TABLE LIST</button> 
-    </div>
+  <div id="side-menu-button" class="side-menu-button">
+    <button type="button" class="menu-btn"><i class="fas fa-bars"></i><span>MENU</span></button>
+  </div>
+  <div id="header-inner">
     <div id="header-content">
         <h1>Company Manager</h1>
         <div id="header-links">
@@ -10,3 +11,4 @@
         </div>
     </div>
   </div>
+</div>

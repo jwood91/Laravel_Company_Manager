@@ -25,43 +25,45 @@
     </div>
 @endif
 </div>
-<div id="form-container-outer" class="form-outer">
-  <div id="form-container-outer" class="form-inner">
-    <form action="{{ route('companies.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
+<div id="form-container-outer" class="col">
+    <div id="edit-nav-link" class="edit-nav-link">
+      <a class="btn btn-success btn-md" href="{{ route('companies.index') }}">Back</a>
+    </div>
+    <div id="form-container-inner" class="row justify-content-center card p-4">
+        <form action="{{ route('companies.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <label for="company_name">Company Name:</label>
-                    <input type="text" name="company_name" class="form-control" placeholder="Enter Company Name">
+             <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <label for="company_name">Company Name:</label>
+                        <input type="text" name="company_name" class="form-control" placeholder="Enter Company Name">
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <label for="website">Website</label>
-                    <input type="text" name="website" class="form-control" placeholder="Enter Company Website">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="text" name="website" class="form-control" placeholder="Enter Company Website">
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" class="form-control" placeholder="Enter Company Email">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" class="form-control" placeholder="Enter Company Email">
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <label for="logo">Logo</label>
-                    <input type="file" name="logo" class="logo">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <label for="logo">Logo</label>
+                        <input type="file" name="logo" class="logo">
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-button">
-                <a class="btn btn-success btn-lg w-25" href="{{ route('companies.index') }}"> Back</a>
-                <button type="submit" class="btn btn-success btn-lg w-25">Submit</button>
+                <div class="form-button">
+                    <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
   </div>
 </div>
 

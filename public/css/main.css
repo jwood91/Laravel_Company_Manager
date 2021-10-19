@@ -51,7 +51,7 @@
 }
 
 .employee-links {
-  height: 50.5px;
+  height: 65px;
 }
 
 .company-links {
@@ -85,7 +85,9 @@
   align-items: center;
   position: relative;
   width: 95%;
+  height: 100%;
   min-width: 95%;
+  margin-bottom: 5px;
 }
 
 #inner {
@@ -94,10 +96,15 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 
 .company-tr {
   height: 90px;
+}
+
+.employee-tr {
+  height: 65px;
 }
 
 #empty {
@@ -109,20 +116,24 @@
 }
 
 .card, .card-body {
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
 table {
   border-top: hidden;
+  border-right: hidden;
+  border-left: hidden;
 }
 
 #table-links {
   border-top: 2px solid #454d55;
+  border-right: hidden;
 }
 
 html, body {
   max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -141,10 +152,8 @@ body p {
 }
 body a {
   text-decoration: none;
-  color: inherit;
 }
 body a:hover {
-  color: inherit;
   text-decoration: underline;
 }
 
@@ -183,7 +192,7 @@ main {
   width: 20%;
 }
 
-#content-main {
+#container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,6 +254,7 @@ header {
   align-items: center;
   height: 10rem;
   width: 100%;
+  max-width: 100%;
   background-color: #20283e;
   color: #fff;
   margin-bottom: 8px;
@@ -253,9 +263,20 @@ header {
 #header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
+  width: 95%;
+  min-width: 95%;
+}
+
+#header-inner {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  padding: 0 15px 0 15px;
+  min-width: 100%;
 }
 
 #header-content {
@@ -263,7 +284,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 80%;
 }
 
 #header-links {
@@ -272,6 +293,18 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 20em;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+#header-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  width: 40%;
+  height: 100%;
 }
 
 #title-menu {
@@ -281,20 +314,61 @@ header {
   width: 30rem;
 }
 
-#my-button {
+.menu-btn {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #20283e;
   border: 3px solid #fff;
+  top: 20%;
   color: #fff;
+  z-index: 9999;
   border-radius: 10px;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+}
+.menu-btn i {
+  font-size: 25px;
+}
+.menu-btn span {
+  font-size: 10px;
+  font-weight: 600;
 }
 
-#my-menu {
+@media only screen and (min-width: 600px) {
+  .menu-btn {
+    top: 20%;
+    width: 70px;
+    height: 70px;
+  }
+  .menu-btn i {
+    font-size: 40px;
+  }
+  .menu-btn span {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+.menu-btn:hover {
+  color: #20283e;
+  background-color: #fff;
+}
+
+#sidenav {
   height: 100vh;
   overflow-y: hidden;
   background-color: #20283e;
   color: #fff;
+}
+
+#sidenav-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
 #sidenav-main {
@@ -363,6 +437,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 10rem;
+  color: #fff;
 }
 
 #company-container {
@@ -439,6 +514,7 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-width: 200px;
 }
 .form-group img {
   margin-top: 10px;
@@ -462,15 +538,44 @@ header {
   justify-content: center;
   width: 95%;
   height: auto;
+  min-width: 500px;
 }
 
 .form-button {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0 15px 0 15px;
+  margin-top: 15px;
+}
+.form-button button {
+  width: 100%;
+}
+
+#form-container-outer {
+  width: 80%;
+  min-width: 250px;
+  height: auto;
+}
+
+#form-container-inner {
+  width: 100%;
+  margin: 0;
+}
+#form-container-inner input {
+  width: 100%;
+}
+
+.edit-nav-link {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 15px;
 }
-.form-button a {
-  margin-right: 20px;
+.edit-nav-link a {
+  width: 6em;
 }

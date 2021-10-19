@@ -1,5 +1,6 @@
 html, body {
   max-width: 100%;
+  overflow-x: hidden;
 
 }
 
@@ -17,11 +18,11 @@ body {
       line-height: 1.42857143;
       a {
         text-decoration: none;
-        color: inherit;
+
 
         }
       a:hover {
-          color: inherit;
+
           text-decoration: underline;
         }
 };
@@ -66,7 +67,7 @@ main {
   width: 20%;
 }
 
-#content-main {
+#container {
   display: flex;
   flex-direction: column;
   align-items: center;

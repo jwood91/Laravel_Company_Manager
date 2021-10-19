@@ -5,10 +5,10 @@
       <h1> Welcome to the company manager</h1>
       <div id="access-site">
           <div class="home-button">
-                  <a type="link" href="companies" class="btn btn-primary">Go to Companies</a>
+                  <a type="link" href="companies" class="btn btn-success">Go to Companies</a>
           </div>
           <div class="home-button">
-                  <a type="link" href="employees" class="btn btn-primary">Go to Employees</a>
+                  <a type="link" href="employees" class="btn btn-success">Go to Employees</a>
           </div>
       </div>
     </div>

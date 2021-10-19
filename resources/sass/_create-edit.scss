@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-width: 200px;
   img {
     margin-top: 10px;
     width: 100px;
@@ -14,6 +15,7 @@
   align-items: center;
   justify-content: center;
   width: 95%;
+
   height: auto;
 }
 
@@ -25,15 +27,47 @@
   justify-content: center;
   width: 95%;
   height: auto;
+  min-width: 500px;
 }
 
 .form-button {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom:  15px;
-  a {
-    margin-right: 20px;
+  padding: 0 15px 0 15px;
+  margin-top: 15px;
+  button {
+    width: 100%;
   }
+}
+
+
+
+
+#form-container-outer {
+  width: 80%;
+  min-width: 250px;
+  height: auto;
+}
+
+#form-container-inner {
+  width: 100%;
+  margin: 0;
+  input{
+    width:100%;
+  }
+}
+.edit-nav-link {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  a {
+    width: 6em;
+  }
+
 }

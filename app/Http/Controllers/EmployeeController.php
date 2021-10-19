@@ -16,7 +16,7 @@ class EmployeeController extends Controller
     public function index()
     {
 
-      $employees = Employee::with('company')->paginate(10);
+        $employees = Employee::with('company')->paginate(10);
        return View('employees.index', compact('employees'));
 
     }
@@ -119,6 +119,12 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $employee = Employee::find($id);
+      $employee->delete();
+
+      // redirect
+
+      return redirect(route('employees.index'));
+      session()->flash('message', 'Successfully deleted the employee!');
     }
   }
