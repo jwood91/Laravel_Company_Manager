@@ -1,8 +1,8 @@
 <div id="outer">
-  <div id="inner">
+  <div id="inner" class="card">
 
-    <table class="table table-sm table-responsive-md w-100 table-bordered table-hover">
-                            <thead class="text-center thead-light">
+    <table class="card-body p-0 m-0 table table-sm table-responsive-md w-100 table-bordered table-hover">
+                            <thead class="text-center thead-dark">
                                 <tr>
                                     <th class="align-middle main-column">Employee ID</th>
                                     <th class="align-middle main-column">First Name</th>
@@ -27,10 +27,10 @@
                                     <td class="align-middle main-column"> {{ $employee->email}} </td>
                                     <td class="align-middle main-column"> {{ $employee->phone}} </td>
                                     <td id="empty" class="align-middle empty">Empty</td>
-                                    <td class="align-middle employee-links links-column links-data">
+                                    <td class="align-middle employee-links links-column links-data p-0 m-0">
                                       <div class="links-div">
-                                           <a class="btn btn-primary table-link" title="View" href="{{ route('employees.show', $employee->id) }}"><i class="far fa-eye tooltiptext"></i></a>
-                                           <a class="btn btn-primary table-link"  title="Edit" href="{{ route('employees.edit', $employee->id) }}"><i class="far fa-edit tooltiptext"></i></a>
+                                           <a class="btn btn-success table-link" title="View" href="{{ route('employees.show', $employee->id) }}"><i class="far fa-eye tooltiptext"></i></a>
+                                           <a class="btn btn-success table-link"  title="Edit" href="{{ route('employees.edit', $employee->id) }}"><i class="far fa-edit tooltiptext"></i></a>
                                        </div>
                                     </td>
                                 </tr>

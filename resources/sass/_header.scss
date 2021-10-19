@@ -4,7 +4,8 @@ header {
   align-items: center;
   height: 10rem;
   width: 100%;
-  border-bottom: 2px solid lightgrey;
+  background-color: #20283e;
+  color: #fff;
   margin-bottom: 8px;
 }
 
@@ -39,4 +40,13 @@ header {
   justify-content: space-between;
   width: 30rem;
 
+}
+
+#my-button {
+  background-color: #20283e;
+  border: 3px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
 }

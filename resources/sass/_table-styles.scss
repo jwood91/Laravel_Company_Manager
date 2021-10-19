@@ -4,6 +4,7 @@
   max-width: 100%;
   height: 100%;
   overflow-x: scroll;
+
 }
 
 
@@ -14,21 +15,23 @@
 
 .main-column {
   width: auto;
-  height: 50px;
+  height: 53px;
   min-width: 50px;
 }
 
 .links-header {
   min-width: 103px;
    width: 103px;
-   height: 49px;
+
    right:0;
 
 }
 
 #links-header {
   border: none;
-  border-left: 0.5px solid #dee2e6;
+  border-left: 0.5px solid #454d55;
+
+  height: 53px;
 }
 #logo {
   border-right-style: none;
@@ -49,8 +52,8 @@
   width: 103px;
   right: 0;
   min-width: 100px;
-  background-color: lightgrey;
-  border: 0.5px solid black;
+  background-color:  #20283e;
+
 
 }
 
@@ -80,6 +83,8 @@
 
 .add-button-container {
   width: 95%;
+  // background-color: map-get($colors, green);
+
 }
 
 #outer {
@@ -97,18 +102,31 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
+
 }
 
 .company-tr {
-
   height: 90px;
 }
 
-.empty {
-  visibility: hidden;
+#empty {
+
   width: 100px;
   min-width: 100px;
   max-width: 100px;
-  border: none;
+  border: 0px;
+  padding: 0px;
+}
+
+.card, .card-body {
+border-radius: 10px;
+overflow: hidden;
+}
+
+table {
+  border-top: hidden;
+}
+
+#table-links {
+  border-top: 2px solid #454d55;
 }

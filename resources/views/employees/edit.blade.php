@@ -4,7 +4,7 @@
 
       <div id="form-head-inner" class="form-inner">
           <div class="form-title">
-            <h2>Add New Employee</h2>
+            <h2>Edit Employee</h2>
           </div>
       </div>
 
@@ -30,9 +30,9 @@
 @endif
 </div>
     <div id="form-container-outer" class="form-outer">
-      <div id="form-container-outer" class="form-inner">
+      <div id="form-container-inner" class="form-inner">
 
-        <form id="employee-form" action="{{ route('employees.store') }}" method="POST">
+        <form id="employee-form" action="{{ route('employees.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
              <div class="row">
@@ -73,13 +73,14 @@
                           </select>
                       </div>
                 <div class="form-button">
-                    <a class="btn btn-primary btn-lg w-25" href="{{ route('employees.index') }}"> Back</a>
-                    <button type="submit" class="btn btn-primary btn-lg w-25">Submit</button>
+                    <a class="btn btn-success btn-lg w-25" href="{{ route('employees.index') }}"> Back</a>
+                    <button type="submit" class="btn btn-success btn-lg w-25">Submit</button>
                 </div>
             </div>
         </form>
       </div>
     </div>
+  </div>
 
   </x-slot>
 </x-layout>

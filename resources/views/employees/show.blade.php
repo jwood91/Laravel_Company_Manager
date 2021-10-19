@@ -4,6 +4,14 @@
       <h1>Employee Information</h1>
 
       <div id="company-container">
+        <div id="show-buttons">
+            <div class="pull-right">
+                <a class="btn btn-success show-button" href="{{ route('employees.index', $employee->id) }}">Back</a>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-success show-button" href="{{ route('employees.edit', $employee->id) }}">Edit</a>
+            </div>
+          </div>
         <div id="company-inner">
             <div id="id" class="company-details information-input">
                 <label for="id" class="company-label">Company ID:</label>

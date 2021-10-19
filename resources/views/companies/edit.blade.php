@@ -26,6 +26,8 @@
         </div>
         @endif
       </div>
+      <div id="form-container-outer" class="form-outer">
+        <div id="form-container-inner" class="form-inner">
         <form action="{{ route('companies.update', $company->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
 
@@ -65,11 +67,12 @@
             </div>
 
             <div class="form-button">
-                <a class="btn btn-primary btn-lg w-25" href="{{ route('employees.index') }}"> Back</a>
-                <button type="submit" class="btn btn-primary btn-lg w-25">Submit</button>
+                <a class="btn btn-success btn-lg w-25" href="{{ route('companies.index') }}"> Back</a>
+                <button type="submit" class="btn btn-success btn-lg w-25">Submit</button>
             </div>
         </div>
-
+      </div>
+    </div>
 
         </form>
     </x-slot>

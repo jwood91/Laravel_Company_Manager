@@ -1,6 +1,6 @@
 <div id="header-container">
     <div id="side-menu-button" class="side-menu-button">
-      <button type="button" id="my-button">MENU</button> 
+      <button type="button" id="menu-button">TABLE LIST</button> 
     </div>
     <div id="header-content">
         <h1>Company Manager</h1>

@@ -7,10 +7,6 @@
             <h2>Add New Employee</h2>
           </div>
       </div>
-      <div class="form-back">
-          <a class="btn btn-primary" href="{{ route('employees.index') }}"> Back</a>
-      </div>
-
 
 
 
@@ -33,7 +29,7 @@
 </div>
     <div id="form-container-outer" class="form-outer">
       <div id="form-container-outer" class="form-inner">
-        <form id="employee-form" action="{{ route('employees.store') }}" method="POST">
+        <form id="employee-form" action="{{ route('employees.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
              <div class="row">
@@ -59,7 +55,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" name="phone" class="form-control">
+                        <input type="tel" name="phone" class="form-control" placeholder="Enter Phone Number">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">

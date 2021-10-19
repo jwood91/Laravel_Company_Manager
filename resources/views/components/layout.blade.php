@@ -8,7 +8,7 @@
   crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="/css/main.css">
-
+  <script src="/js/app.js"></script>
   <script src="https://kit.fontawesome.com/cd35332ff4.js"
     crossorigin="anonymous"></script>
   <title>Home</title>
@@ -24,25 +24,24 @@
     <main>
         <div id="content-container">
               @include('includes.sidenav')
-              <div id="content-main">
-                <header>
+              <div id="site-overlay"></div>
+              <div id="container">
+                  <header>
 
-                  @include('includes.header')
+                    @include('includes.header')
 
-                </header>
-                {{ $content }}
-              </div>
+                  </header>
+                  {{ $content }}
+                </div>
         </div>
     </main>
-    <script src="/js/app.js"></script>
+
     <script>
           $(document).ready(function(){
               $('.alert-success').fadeIn().delay(5000).fadeOut();
                $('.btn-primary').tooltip({show: {effect:"none", delay:0}});
           });
     </script>
-     <script>      //Offside.js minimal setup
-         var myOffside = offside( '#my-menu', {          slidingElementsSelector:'#content-main',         buttonsSelector: '#my-button, .another-button',     });
-    </script>
+
 
 </body>

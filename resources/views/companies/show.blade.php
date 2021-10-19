@@ -6,10 +6,10 @@
       <div id="company-container" class="show-container">
         <div id="show-buttons">
             <div class="pull-right">
-                <a class="btn btn-primary show-button" href="{{ route('companies.index', $company->id) }}">Back</a>
+                <a class="btn btn-success show-button" href="{{ route('companies.index', $company->id) }}">Back</a>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary show-button" href="{{ route('companies.edit', $company->id) }}">Edit</a>
+                <a class="btn btn-success show-button" href="{{ route('companies.edit', $company->id) }}">Edit</a>
             </div>
           </div>
         <div id="company-inner" class="show-inner">
