@@ -4,12 +4,12 @@
     <table class="card-body p-0 m-0 table table-sm w-100 table-responsive-md table-bordered table-hover">
                             <thead class="text-center thead-dark">
                                 <tr>
-                                    <th class="align-middle main-column">Employee ID</th>
-                                    <th class="align-middle main-column">First Name</th>
-                                    <th class="align-middle main-column">Last Name</th>
-                                    <th class="align-middle main-column">Company Name</th>
-                                    <th class="align-middle main-column">Email</th>
-                                    <th class="align-middle main-column">Phone</th>
+                                    <th class="align-middle main-column">@sortablelink('id', ' ID', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
+                                    <th class="align-middle main-column">@sortablelink('first_name', 'First Name', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
+                                    <th class="align-middle main-column">@sortablelink('last_name', 'Last Name', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
+                                    <th class="align-middle main-column">@sortablelink('company_name', 'Company Name', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
+                                    <th class="align-middle main-column">@sortablelink('email', 'Email', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
+                                    <th class="align-middle main-column">@sortablelink('phone', 'Phone', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
                                     <th class="align-middle main-column" style="width:100px; visibility: hidden;">Empty</th>
                                     <th id="links-header" class="align-middle links-column links-header">Links</th>
                                 </tr>
@@ -37,6 +37,7 @@
                             </tbody>
 
           </table>
+
         </div>
       </div>
-      {{ $employees->links() }}
+{!! $employees->appends(request()->except('page'))->render() !!}

@@ -17,7 +17,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-      $companies = Company::paginate(10);
+      $companies = Company::sortable()->paginate(10);
         return View('companies.index', compact('companies'));
     }
 
@@ -146,9 +146,5 @@ class CompanyController extends Controller
       session()->flash('message', 'Successfully deleted the company and its employees!');
       return redirect(route('companies.index'));
 
-    }
-
-
-
-
-}
+          }
+      }

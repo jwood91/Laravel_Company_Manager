@@ -4,10 +4,10 @@
       <table class="card-body p-0 m-0 table table-sm w-100 table-responsive-md table-bordered table-hover">
                               <thead class="text-center thead-dark">
                                   <tr>
-                                      <th class="align-middle main-column">Company ID</th>
-                                      <th class="align-middle main-column">Company Name</th>
-                                      <th class="align-middle main-column">Email</th>
-                                      <th class="align-middle main-column">Website</th>
+                                      <th class="align-middle main-column ">@sortablelink('id', 'ID', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
+                                      <th class="align-middle main-column">@sortablelink('company_name', 'Company Name', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
+                                      <th class="align-middle main-column">@sortablelink('email', 'Email', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
+                                      <th class="align-middle main-column">@sortablelink('website', 'Website', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
                                       <th id="logo" class="align-middle main-column">Logo</th>
                                       <th class="align-middle empty" style="width:100px; visibility: hidden;">Empty</th>
                                       <th id="links-header" class="align-middle links-header links-column">Links</th>
@@ -38,4 +38,4 @@
           </table>
         </div>
       </div>
-          {{ $companies->links() }}
+          {!! $companies->appends(request()->except('page'))->render() !!}

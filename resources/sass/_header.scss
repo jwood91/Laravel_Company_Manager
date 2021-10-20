@@ -27,6 +27,9 @@ header {
   align-items: center;
   width: 100%;
   min-width: 100%;
+  h1 {
+    font-size: 25px;
+  }
 
 }
 
@@ -94,7 +97,9 @@ header {
 
 @media only screen and (min-width: 600px) {
   #header-inner {
-
+      h1 {
+        font-size: 32px;
+      }
     // width: 98.5%;
   }
   .menu-btn {

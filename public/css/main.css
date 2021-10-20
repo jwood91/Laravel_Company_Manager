@@ -6,6 +6,12 @@
   overflow-x: scroll;
 }
 
+.sort-link {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none !important;
+}
+
 .table-pages {
   width: 100%;
   height: 10%;
@@ -278,6 +284,9 @@ header {
   width: 100%;
   min-width: 100%;
 }
+#header-inner h1 {
+  font-size: 25px;
+}
 
 #header-content {
   display: flex;
@@ -339,6 +348,10 @@ header {
 }
 
 @media only screen and (min-width: 600px) {
+  #header-inner h1 {
+    font-size: 32px;
+  }
+
   .menu-btn {
     top: 20%;
     width: 70px;

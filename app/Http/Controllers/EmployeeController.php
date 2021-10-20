@@ -16,7 +16,7 @@ class EmployeeController extends Controller
     public function index()
     {
 
-        $employees = Employee::with('company')->paginate(10);
+        $employees = Employee::with('company')->sortable()->paginate(10);
        return View('employees.index', compact('employees'));
 
     }
