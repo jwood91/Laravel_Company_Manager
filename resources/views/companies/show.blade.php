@@ -28,11 +28,11 @@
             </div>
             <div id="company-website" class="company-details information-input">
               <label for="website" class="company-label">Website:</label>
-              <a  name="website" class="text-input" href="{{ $company->website }}" target="_blank">{{ $company->website }}</a>
+              <a  name="website" class="text-input" href="{{ $company->website }}" target="_blank">View company website</a>
             </div>
             <div id="current-company-logo" class="logo-input company-details">
               <label for="logo" class="company-label">Logo:</label>
-              <img name="logo" src="{{url('/storage/images/'.basename($company->logo))}}" style="height:100px; width: 100px;">
+              <img name="logo" class="company-details" src="{{url('/storage/images/'.basename($company->logo))}}" style="height:100px; width: 100px;">
             </div>
         </div>
       </div>

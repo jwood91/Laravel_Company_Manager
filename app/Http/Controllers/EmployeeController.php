@@ -13,10 +13,19 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+	{
+	    $this->middleware('auth');
+	}
+
+
+
+
     public function index()
     {
+        $employees = Employee::with('company')->sortable()->filter(request(['search']))->paginate(10);
 
-        $employees = Employee::with('company')->sortable()->paginate(10);
        return View('employees.index', compact('employees'));
 
     }
@@ -123,8 +132,8 @@ class EmployeeController extends Controller
       $employee->delete();
 
       // redirect
-
-      return redirect(route('employees.index'));
       session()->flash('message', 'Successfully deleted the employee!');
+      return redirect(route('employees.index'));
+
     }
   }

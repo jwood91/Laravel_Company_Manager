@@ -16,14 +16,14 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-    
 
-        DB::table('users')->insert([
-            'name' => 'Joe Wood',
-            'username'=> 'Jwood',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('!password'),
-            'is_admin' => true,
-          ]);
+
+        // DB::table('users')->insert([
+        //     'name' => 'Joe Wood',
+        //     'username'=> 'Jwood',
+        //     'email' => 'admin@admin.com',
+        //     'password' => bcrypt('!password'),
+        //     'is_admin' => true,
+        //   ]);
     }
 }

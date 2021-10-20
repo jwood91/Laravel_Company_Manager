@@ -13,6 +13,7 @@
             </div>
           </div>
         <div id="company-inner">
+          <div id= "info-section">
             <div id="id" class="company-details information-input">
                 <label for="id" class="company-label">Company ID:</label>
                 <p name="id" class="text-input">{{ $employee->id }}</p>
@@ -33,7 +34,7 @@
               <label for="phone" class="company-label">Phone</label>
               <a href="phone"  name="phone" class="text-input" href="{{ $employee->phone }}" target="_blank">{{ $employee->phone }}</a>
             </div>
-
+          </div>
         </div>
 
       </div>

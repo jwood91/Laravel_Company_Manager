@@ -15,9 +15,17 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+     public function __construct()
+      {
+          $this->middleware('auth');
+      }
+
+
     public function index()
     {
-      $companies = Company::sortable()->paginate(10);
+      $companies = Company::sortable()->filter(request(['search']))->paginate(10);
         return View('companies.index', compact('companies'));
     }
 

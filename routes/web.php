@@ -19,13 +19,16 @@ use App\Models\Company;
 |
 */
 
-Route::get('/', function(){
-  return View('home');
-});
+// Route::get('/', function(){
+//   return View('home');
+// })->middleware('auth');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');;
 
 Route::resource('companies', CompanyController::class)
       ->missing(function(Request $request){
         return Redirect::route('companies.index');
-      });
+      })->middleware('auth');
 
-Route::resource('employees', EmployeeController::class);
+Route::resource('employees', EmployeeController::class)->middleware('auth');
+
+Auth::routes(['register' => false]);

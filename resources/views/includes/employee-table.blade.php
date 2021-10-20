@@ -7,7 +7,7 @@
                                     <th class="align-middle main-column">@sortablelink('id', ' ID', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
                                     <th class="align-middle main-column">@sortablelink('first_name', 'First Name', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
                                     <th class="align-middle main-column">@sortablelink('last_name', 'Last Name', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
-                                    <th class="align-middle main-column">@sortablelink('company_name', 'Company Name', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
+                                    <th class="align-middle main-column">@sortablelink('company.company_name', 'Company Name', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
                                     <th class="align-middle main-column">@sortablelink('email', 'Email', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
                                     <th class="align-middle main-column">@sortablelink('phone', 'Phone', ['parameter' => 'smile'], ['class' => 'sort-link'])</th>
                                     <th class="align-middle main-column" style="width:100px; visibility: hidden;">Empty</th>

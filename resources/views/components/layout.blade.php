@@ -41,7 +41,7 @@
     <script>
           $(document).ready(function(){
               $('.alert-success').fadeIn().delay(5000).fadeOut();
-               $('.btn-success').tooltip({show: {effect:"none", delay:0}});
+              
           });
     </script>
 
