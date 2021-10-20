@@ -42,7 +42,7 @@
           </div>
         <div id="form-container-inner" class="row justify-content-center card p-4">
 
-        <form id="employee-form" action="{{ route('employees.store') }}" method="POST" enctype="multipart/form-data" class="">
+        <form id="employee-form" action="{{ route('employees.update', $employee->id) }}" method="POST" enctype="multipart/form-data" class="">
             @csrf
             @method('PATCH')
              <div class="row">

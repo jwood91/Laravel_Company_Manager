@@ -104,7 +104,7 @@ class EmployeeController extends Controller
     {
       $employee = Employee::find($id);
 
-      $attribues = $request->validate([
+      $attributes = $request->validate([
           'first_name'   => 'required',
           'last_name' => 'required',
           'email'      => 'required|email',

@@ -40,8 +40,7 @@
         <div id="form-container-inner" class="row justify-content-center card p-4">
             <form action="{{ route('companies.update', $company->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
-
-             @method('PATCH')
+            @method('PATCH')
              <div class="row">
                <div class="col-xs-12 col-sm-12 col-md-12">
                    <div class="form-group">

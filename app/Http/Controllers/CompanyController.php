@@ -50,14 +50,35 @@ class CompanyController extends Controller
     {
         //// validate
         // read more on validation at http://laravel.com/docs/validation
-        $request->validate([
-            'company_name'   => 'required',
-            'email'      => 'required|email',
-            'website' => 'required',
-            'logo' => 'required',
-        ]);
+      $attributes =  $request->validate([
+          'company_name' => [
+                'required',
+                'max: 255',
 
-         Company::update($request->all());
+                ],
+
+            'email' => [
+                'required',
+                'max: 255',
+                ],
+
+            'website' => [
+                'string',
+                'required',
+                'max: 255'
+                ],
+
+            'logo' => [
+                'file',
+                'dimensions: min_width=100,min_height=100',
+                ],
+        ]);
+        $path = $request->file('logo')->store('public/images');
+
+
+        $attributes['logo'] = $path;
+
+        Company::create($attributes);
 
          return redirect()->back()->with('message', 'Company Added Successfully!');
 
