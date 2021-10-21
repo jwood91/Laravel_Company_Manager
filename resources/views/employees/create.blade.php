@@ -58,7 +58,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" name="phone" class="form-control" placeholder="Enter Phone Number">
+                        <input type="number" name="phone" class="form-control" placeholder="Enter Phone Number">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">

@@ -58,12 +58,13 @@ class CompanyController extends Controller
                 ],
 
             'email' => [
+                'email',
                 'required',
                 'max: 255',
                 ],
 
             'website' => [
-                'string',
+                'url',
                 'required',
                 'max: 255'
                 ],

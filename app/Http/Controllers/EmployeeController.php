@@ -50,11 +50,26 @@ class EmployeeController extends Controller
     {//// validate
     // read more on validation at http://laravel.com/docs/validation
     $request->validate([
-        'first_name'   => 'required',
-        'last_name' => 'required',
-        'email'      => 'required|email',
-        'phone' => 'required',
-        'company_id' => 'required',
+      'first_name'   => [
+        'required',
+        'max: 100',
+      ],
+      'last_name' =>[
+         'required',
+         'max: 100',
+       ],
+      'email'  => [
+         'required',
+         'email',
+         'max: 255'
+       ],
+      'phone' => [
+         'required',
+         'digits_between: 10, 25',
+       ],
+      'company_id' => [
+         'required',
+       ],
 
     ]);
 
@@ -105,11 +120,26 @@ class EmployeeController extends Controller
       $employee = Employee::find($id);
 
       $attributes = $request->validate([
-          'first_name'   => 'required',
-          'last_name' => 'required',
-          'email'      => 'required|email',
-          'phone' => 'required',
-          'company_id' => 'required',
+          'first_name'   => [
+            'required',
+            'max: 100',
+          ],
+          'last_name' =>[
+             'required',
+             'max: 100',
+           ],
+          'email'  => [
+             'required',
+             'email',
+             'max: 255'
+           ],
+          'phone' => [
+             'required',
+             'digits_between: 10, 25',
+           ],
+          'company_id' => [
+             'required',
+           ],
 
       ]);
 
