@@ -26,7 +26,7 @@ class CompanyController extends Controller
     public function index()
     {
       $companies = Company::sortable()->filter(request(['search']))->paginate(10);
-        return View('companies.index', compact('companies'));
+        return view('companies.index', compact('companies'));
     }
 
     /**
@@ -36,7 +36,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-      return View('companies.create');
+        return view('companies.create');
 
     }
 
@@ -93,11 +93,11 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {   
+        $company = Company::findorfail($id);
+        $employees = $company->companyEmployees($id);
 
-        $employees = Employee::where('company_id', $id)->paginate(5);
-        $company = Company::findOrFail($id);
-        return view('companies.show', compact('employees','company'));
+        return view('companies.show', compact('company', 'employees'));
 
     }
 
@@ -110,7 +110,9 @@ class CompanyController extends Controller
     public function edit($id)
     {
         $company = Company::findOrFail($id);
-        return view('companies.edit', compact('company'));
+
+
+        return view('companies.edit', compact('company', 'employees'));
 
     }
 
@@ -168,13 +170,13 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-      $company = Company::find($id);
-      $company->employee()->delete();
-      $company->delete();
+            $company = Company::find($id);
+            $company->employee()->delete();
+            $company->delete();
 
-      // redirect
-      session()->flash('message', 'Successfully deleted the company and its employees!');
-      return redirect(route('companies.index'));
+            // redirect
+            session()->flash('message', 'Successfully deleted the company and its employees!');
+            return redirect(route('companies.index'));
 
           }
       }

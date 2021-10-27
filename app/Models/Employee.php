@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
+use App\Models\Company;
 
 class Employee extends Model
 {
     use Sortable;
-    protected $table = "employee";
+    protected $table = "employees";
 
     use HasFactory;
 
@@ -19,7 +20,8 @@ class Employee extends Model
          return $this->belongsTo(Company::class);
      }
 
-   public function scopeFilter($query, array $filters)
+
+      public function scopeFilter($query, array $filters)
         {
            $query->when($filters['search'] ?? false, fn($query, $search) =>
            $query
@@ -48,7 +50,9 @@ class Employee extends Model
        'email',
        'phone',
        'company_id',
-
-
    ];
+
+
+
+   
 }

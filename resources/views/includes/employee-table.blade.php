@@ -17,12 +17,11 @@
 
                             <tbody class="list">
                                 @foreach ($employees as $employee)
-                                  <?php $employeeCompany = $employee->company->company_name;?>
                               <tr class="employee-tr">
                                     <td class="align-middle main-column"> {{ $employee->id}} </td>
                                     <td class="align-middle main-column"> {{ $employee->first_name }} </td>
                                     <td class="align-middle main-column"> {{ $employee->last_name }} </td>
-                                    <td class="align-middle main-column"> {{ $employeeCompany }} </td>
+                                    <td class="align-middle main-column"> {{ $employee->company->company_name }} </td>
                                     <td class="align-middle main-column"> {{ $employee->email}} </td>
                                     <td class="align-middle main-column"> {{ $employee->phone}} </td>
                                     <td id="empty" class="align-middle empty">Empty</td>
@@ -40,4 +39,5 @@
 
         </div>
       </div>
-{!! $employees->appends(request()->except('page'))->render() !!}
+      {!! $employees->appends(request()->except('page'))->render() !!}
+      

@@ -1,11 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TableController;
-use App\Http\Controllers\SortController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EmployeeController;
-use App\Models\Company;
 
 
 /*
@@ -24,10 +21,7 @@ use App\Models\Company;
 // })->middleware('auth');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');;
 
-Route::resource('companies', CompanyController::class)
-      ->missing(function(Request $request){
-        return Redirect::route('companies.index');
-      })->middleware('auth');
+Route::resource('companies', CompanyController::class)->middleware('auth');
 
 Route::resource('employees', EmployeeController::class)->middleware('auth');
 

@@ -12,5 +12,6 @@
       @include('includes.search')
     </div>
     @include('includes.employee-table')
+    
   </x-slot>
 </x-layout>
