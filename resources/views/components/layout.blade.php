@@ -6,7 +6,6 @@
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/pushy.css">
   <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="/css/main.css">
   <script src="/js/pushy.min.js" defer></script>
@@ -41,7 +40,7 @@
     <script>
           $(document).ready(function(){
               $('.alert-success').fadeIn().delay(5000).fadeOut();
-              
+
           });
     </script>
 

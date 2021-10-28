@@ -22,7 +22,6 @@ class CompanyFactory extends Factory
      */
     public function definition()
     {
-
         $name = $this->faker->company();
 
         return [
@@ -34,10 +33,5 @@ class CompanyFactory extends Factory
             'updated_at' => now(),
 
         ];
-
-
-
-
-
     }
 }

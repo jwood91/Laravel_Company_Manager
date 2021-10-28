@@ -15,4 +15,3 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sourceMaps()
     .sass('resources/sass/main.scss', 'public/css')
-    .sass('resources/sass/pushy.scss', 'public/css');

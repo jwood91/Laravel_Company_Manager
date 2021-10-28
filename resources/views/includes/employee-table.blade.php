@@ -34,10 +34,7 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-
-          </table>
-
-        </div>
-      </div>
+                    </table>
+                </div>
+            </div>
       {!! $employees->appends(request()->except('page'))->render() !!}
-      

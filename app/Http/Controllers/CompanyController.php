@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Company;
-use App\Models\Employee;
 
 class CompanyController extends Controller
 {
@@ -15,17 +14,17 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-
-     public function __construct()
-      {
-          $this->middleware('auth');
-      }
-
-
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index()
     {
-      $companies = Company::sortable()->filter(request(['search']))->paginate(10);
+        $companies = Company::sortable()->filter(request(['search']))->paginate(10);
         return view('companies.index', compact('companies'));
     }
 
@@ -37,7 +36,6 @@ class CompanyController extends Controller
     public function create()
     {
         return view('companies.create');
-
     }
 
     /**
@@ -48,42 +46,38 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //// validate
         // read more on validation at http://laravel.com/docs/validation
-      $attributes =  $request->validate([
-          'company_name' => [
+        $attributes = $request->validate([
+            'company_name' => [
                 'required',
                 'max: 255',
 
-                ],
+            ],
 
             'email' => [
                 'email',
                 'required',
                 'max: 255',
-                ],
+            ],
 
             'website' => [
                 'url',
                 'required',
-                'max: 255'
-                ],
+                'max: 255',
+            ],
 
             'logo' => [
                 'file',
                 'dimensions: min_width=100,min_height=100',
-                ],
+            ],
         ]);
         $path = $request->file('logo')->store('public/images');
-
 
         $attributes['logo'] = $path;
 
         Company::create($attributes);
 
-         return redirect()->back()->with('message', 'Company Added Successfully!');
-
-
+        return redirect()->back()->with('message', 'Company Added Successfully!');
     }
 
     /**
@@ -93,12 +87,12 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
-        $company = Company::findorfail($id);
-        $employees = $company->companyEmployees($id);
+    {
+        $company = Company::findOrFail($id);
 
-        return view('companies.show', compact('company', 'employees'));
+        $employees = Company::companyEmployees($id);
 
+        return view('companies.show', compact('employees', 'company'));
     }
 
     /**
@@ -111,9 +105,7 @@ class CompanyController extends Controller
     {
         $company = Company::findOrFail($id);
 
-
-        return view('companies.edit', compact('company', 'employees'));
-
+        return view('companies.edit', compact('company'));
     }
 
     /**
@@ -125,41 +117,39 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-      // dd(request('logo'));
-      $company = Company::find($id);
+        // dd(request('logo'));
+        $company = Company::find($id);
 
-      $attribues = $request->validate([
-                'company_name' => [
-                      'required',
-                      'max: 255',
+        $attribues = $request->validate([
+            'company_name' => [
+                'required',
+                'max: 255',
 
-                      ],
+            ],
 
-                  'email' => [
-                      'required',
-                      'max: 255',
-                      ],
+            'email' => [
+                'required',
+                'max: 255',
+            ],
 
-                  'website' => [
-                      'string',
-                      'required',
-                      'max: 255'
-                      ],
+            'website' => [
+                'string',
+                'required',
+                'max: 255',
+            ],
 
-                  'logo' => [
-                      'file',
-                      'dimensions: min_width=100,min_height=100',
-                      ],
+            'logo' => [
+                'file',
+                'dimensions: min_width=100,min_height=100',
+            ],
 
-            ]);
+        ]);
 
+        $attributes['logo'] = request('logo')->store('/public/images');
 
-      $attributes['logo'] = request('logo')->store('/public/images');
+        $company->update($attributes);
 
-
-      $company->update($attributes);
-
-       return redirect()->back()->with('message', 'Company Edited Successfully!');
+        return redirect()->back()->with('message', 'Company Edited Successfully!');
     }
 
     /**
@@ -170,13 +160,12 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-            $company = Company::find($id);
-            $company->employee()->delete();
-            $company->delete();
+        $company = Company::find($id);
+        $company->employee()->delete();
+        $company->delete();
 
-            // redirect
-            session()->flash('message', 'Successfully deleted the company and its employees!');
-            return redirect(route('companies.index'));
-
-          }
-      }
+        // redirect
+        session()->flash('message', 'Successfully deleted the company and its employees!');
+        return redirect(route('companies.index'));
+    }
+}

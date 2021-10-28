@@ -24,8 +24,6 @@ class EmployeeFactory extends Factory
      */
     public function definition()
     {
-
-
         return [
 
             'first_name' => $this->faker->firstName(),
